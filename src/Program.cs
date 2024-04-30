@@ -11,18 +11,18 @@ namespace NFMqttClientApp
 {
 	public class Program
 	{
-		private const string c_SSID = "wifissid";
-		private const string c_AP_PASSWORD = "wifipassword";
+		private const string c_SSID = "fh_f0f258";
+		private const string c_AP_PASSWORD = "17102002";
 
 		private static MqttClient device = null;
 
-		private const string c_DEVICEID = "deviceid";
+		private const string c_DEVICEID = "client3-authn-ID";
 		private const string c_USERNAME = c_DEVICEID;
 
-		private const string c_BROKERHOSTNAME = "youreventgrid.westeurope-1.ts.eventgrid.azure.net";
+		private const string c_BROKERHOSTNAME = "mqtt-trjt-test.southeastasia-1.ts.eventgrid.azure.net";
 		private const int c_PORT = 8883;
-		private const string c_PUB_TOPIC = "message/fromnanoframework";
-		private const string c_SUB_TOPIC = "message/device/#";
+		private const string c_PUB_TOPIC = "telemetry/fromnanoframework";
+		private const string c_SUB_TOPIC = "telemetry/#";
 
 		public static void Main()
 		{
@@ -198,15 +198,37 @@ namespace NFMqttClientApp
 
 		#region Certificates (include BEGIN and END)
 		private const string client_cert = @"-----BEGIN CERTIFICATE-----
-cert
+MIIB+DCCAZ6gAwIBAgIRAIoUyyjuyhXWlw1LPXUboZswCgYIKoZIzj0EAwIwTjEd
+MBsGA1UEChMUTXF0dEJsb2dBcHBTYW1wbGVzQ0ExLTArBgNVBAMTJE1xdHRCbG9n
+QXBwU2FtcGxlc0NBIEludGVybWVkaWF0ZSBDQTAeFw0yNDA0MjgxNDU3MDZaFw0y
+NDA4MDYxNDU3MDFaMBsxGTAXBgNVBAMTEGNsaWVudDMtYXV0aG4tSUQwWTATBgcq
+hkjOPQIBBggqhkjOPQMBBwNCAAQ3vMvNhmwtNluxEzWGeffr62wP4ND0OEDfl+vk
+qVbfVPXyBwet+nvzuWzX2q8JuyHOvMqxLeGTd4+4eGPskNHIo4GPMIGMMA4GA1Ud
+DwEB/wQEAwIHgDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHQYDVR0O
+BBYEFFAlH9v43DVAQHMQWT488lqWfsnEMB8GA1UdIwQYMBaAFLK49M9EsK2kgNpc
+cO0hD1AW1FssMBsGA1UdEQQUMBKCEGNsaWVudDMtYXV0aG4tSUQwCgYIKoZIzj0E
+AwIDSAAwRQIgeTLItVRBnKSHvRMmAfB1APAwTvh+uxUKsB5Uh/m/6ncCIQCLykh0
+UBbXb51MdRx+YBMOddU8qm7TNtkYIL/hO+43EA==
 -----END CERTIFICATE-----";
 
 		private const string client_key = @"-----BEGIN EC PRIVATE KEY-----
-cert
+MHcCAQEEIL04eUDaPD3yJS55RLdkjB6ONYdu4Zhj9uuQGW9pwHiUoAoGCCqGSM49
+AwEHoUQDQgAEN7zLzYZsLTZbsRM1hnn36+tsD+DQ9DhA35fr5KlW31T18gcHrfp7
+87ls19qvCbshzrzKsS3hk3ePuHhj7JDRyA==
 -----END EC PRIVATE KEY-----";
 
 		private const string ca_cert = @"-----BEGIN CERTIFICATE-----
-cert
+MIIB+DCCAZ6gAwIBAgIQBbFAmj9ESJcCEZD/vwmyMDAKBggqhkjOPQQDAjBGMR0w
+GwYDVQQKExRNcXR0QmxvZ0FwcFNhbXBsZXNDQTElMCMGA1UEAxMcTXF0dEJsb2dB
+cHBTYW1wbGVzQ0EgUm9vdCBDQTAeFw0yNDA0MjgxNDM3NTNaFw0zNDA0MjYxNDM3
+NTNaME4xHTAbBgNVBAoTFE1xdHRCbG9nQXBwU2FtcGxlc0NBMS0wKwYDVQQDEyRN
+cXR0QmxvZ0FwcFNhbXBsZXNDQSBJbnRlcm1lZGlhdGUgQ0EwWTATBgcqhkjOPQIB
+BggqhkjOPQMBBwNCAASqqcaQem7tUNDSMcbF9eOD04+eAaHgg0Ki8y4WNVMqXEjs
+SH1GMwyfSEPVrdOHzhblZnt3q3h9YU9GWS2ZkyYpo2YwZDAOBgNVHQ8BAf8EBAMC
+AQYwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQU06muC9A5QOeai8oTUWXZ
+C+QTszAwHwYDVR0jBBgwFoAUSsaUV/JgF1oaTVQl7nqh8vnnzi4wCgYIKoZIzj0E
+AwIDSAAwRQIgSuZZ/sVBiEBW4aHNH8z2SsCi0j8wO3pmrtliWLfJVcYCIQC41HI1
+73o/00I++ICRGg4/jYnV9mOoXwZbGvj1qQ/ezw==
 -----END CERTIFICATE-----";
 		#endregion
 
